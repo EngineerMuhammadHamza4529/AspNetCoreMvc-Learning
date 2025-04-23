@@ -1,0 +1,38 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+<h1>Current date  and time is @DateTime.Now</h1> @*Inline razor syntax*@
+<h1>Current year is @DateTime.Now.Year</h1>  @*Inline razor syntax*@
+
+@{
+    var name = "Azan";
+    var email = "azan@gmail.com";
+    var age = 20;
+}
+
+<h2>Name : @name</h2>
+<h2>Email : @email</h2>
+<h2>Age : @age</h2>
+
+
+@{
+    for (int i = 1; i <=10; i++)
+    {
+        <h4>@i</h4>
+    }
+}
+
+@{
+    string[] fruits = { "apple", "Grapes", "Mango" };
+
+    foreach (var item in fruits)
+    {
+     
+        <p>@item</p>
+
+         
+    }
+}

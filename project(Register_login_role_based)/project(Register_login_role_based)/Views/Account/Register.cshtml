@@ -1,0 +1,46 @@
+﻿@model project_Register_login_role_based_.Models.User;
+
+@{
+    ViewData["Title"] = "Register";
+    var currentUserRole = Context.Session.GetString("UserRole"); // Get session role
+}
+
+<h2>Register</h2>
+
+<form asp-action="Register" method="post">
+    <div>
+        <label>Name</label>
+        <input asp-for="Username" class="form-control" />
+    </div>
+    <div>
+        <label>Email</label>
+        <input asp-for="Email" class="form-control" />
+    </div>
+    <div>
+        <label>Password</label>
+        <input asp-for="Password" type="password" class="form-control" />
+    </div>
+
+    @if (currentUserRole == "Admin")
+    {
+        <div>
+            <label>Role</label>
+            <select asp-for="Role" class="form-control">
+                <option value="User">User</option>
+                <option value="Admin">Admin</option>
+            </select>
+        </div>
+    }
+    else
+    {
+        <input type="hidden" asp-for="Role" value="User" />
+    }
+
+    <br />
+    <button type="submit" class="btn btn-primary">Register</button>
+</form>
+
+@if (ViewBag.Error != null)
+{
+    <div class="text-danger">@ViewBag.Error</div>
+}

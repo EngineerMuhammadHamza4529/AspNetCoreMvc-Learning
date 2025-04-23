@@ -1,0 +1,19 @@
+﻿
+@model project_Register_login_role_based_.Models.User;
+
+<h2>Login</h2>
+
+<form asp-action="Login" method="post">
+    <label>Email</label>
+    <input asp-for="Email" class="form-control" />
+    <label>Password</label>
+    <input asp-for="Password" type="password" class="form-control" />
+    <button type="submit">Login</button>
+</form>
+
+@if (ViewBag.data != null)
+{
+    <p style="color:red">@ViewBag.data</p>
+}
+
+
