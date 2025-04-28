@@ -95,6 +95,7 @@ Implementing Add to Cart functionality in e-commerce scenarios.
 Introduction to Code-First development with Entity Framework Core.
 
 Creating models first and then generating the database schema based on models.
+Creating database first and then generating on the models.
 
 **🎯 Learning Outcomes**
 
